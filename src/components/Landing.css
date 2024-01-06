@@ -1,0 +1,100 @@
+
+.banner{
+    background-image: url('./assets/banner-bg.jpg');
+    background-size: cover;
+    height: 700px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+
+.arrow{
+    width: fit-content;
+    position: fixed;
+    top: 825px;
+    left: 50%;
+    animation: arrowScroll 0.7s ease infinite alternate;
+}
+
+.BannerLeftBox {
+    font-family: Poppins;
+    color: white;
+}
+
+.BannerLeftBox h1{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Poppins;
+    font-size: 48px;
+}
+.BannerLeftBox h1 span{
+    position: relative;
+}
+.BannerLeftBox h1 span::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    height: 12px;
+    background-image: url('./assets/caption-dec.png');
+    bottom: 0;
+}
+
+.BannerLeftBox .gamera{
+    font-family: Rubik Doodle Shadow;
+    font-size: 40px;
+}
+.BannerLeftBox .gamera span{
+    color:#EEF296 ;
+}
+.BannerLeftBox form input{
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    padding: 15px 5px;
+}
+.BannerLeftBox form button{
+    margin-left: -80px;
+    padding: 15px 5px !important;
+}
+.imgConRightBox{
+    height: 435px;
+}
+.BannerLeftBox form{
+    position: relative;
+}
+.SearchResult{
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    bottom: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    overflow: auto;
+    height: 200px;
+}
+.togame{
+    text-decoration: none;
+    font-family: Poppins;
+    color: black;
+    width: fit-content;
+}
+.togame:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+@keyframes arrowScroll {
+    0%{
+        transform: translateY(-20px);
+        color: red !important;
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
