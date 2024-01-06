@@ -1,14 +1,18 @@
 import { Games } from "./types/types"
-import './Landing.css'
+import './Banner.css'
 import { useEffect, useState ,useRef} from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import { CloudDownloadOutlined } from "@ant-design/icons"
+import { UserOutlined } from "@ant-design/icons"
+import { PlayCircleOutlined } from "@mui/icons-material"
+import { LayoutOutlined } from "@ant-design/icons"
 
 
 type ILandingProps = {
     games: Games[]
 }
-function Landing({ games }: ILandingProps) {
+function Banner({ games }: ILandingProps) {
     const SearchBox=useRef<HTMLDivElement>(null)
     const [GameName, setGameName] = useState<string>('')
     const [GameArray, setGameArray] = useState<Games[]>([])
@@ -25,13 +29,15 @@ function Landing({ games }: ILandingProps) {
     useEffect(() => {
         if (GameName !== "" && SearchBox.current) {
             
-            SearchBox.current.style.transition = '0.3s'
-            SearchBox.current.style.width = '70%'
+            SearchBox.current.style.transition = '0.5s'
             SearchBox.current.style.bottom = '-220px'
+            SearchBox.current.style.opacity = '1'
+
             setGameArray(games.filter((game:Games)=>game.title.toLowerCase().includes(GameName.toLowerCase())))
         }
         else if (GameName === "" && SearchBox.current) {
-            SearchBox.current.style.width = '0px'
+            SearchBox.current.style.opacity = '0'
+            
         }
     }, [GameName, games])
  
@@ -77,11 +83,36 @@ return (
                         <img alt="img" className="img-fluid h-100" src={`${games && games[RandomeNumber].thumbnail}`} />
                     </div>  
                 </div>
-                
+                <div className="col-10 BannerIcons d-flex justify-content-between" >
+                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center ">
+                        <div className="d-flex align-items-center justify-content-center">
+                        <CloudDownloadOutlined style={{fontSize:'50px',color:'white'}} />
+                    </div>
+                        <p className="col-12 text-center">Free Storage</p>
+                    </div>
+                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                        <div className="d-flex align-items-center justify-content-center">
+                        <UserOutlined style={{fontSize:'50px',color:'white'}} />
+                    </div>
+                        <p className="col-12 text-center">User More</p>
+                    </div>
+                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                        <div className="d-flex align-items-center justify-content-center">
+                        <PlayCircleOutlined style={{fontSize:'50px',color:'white'}} />
+                    </div>
+                        <p className="col-12 text-center">replay ready</p>
+                    </div>
+                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                        <div className="d-flex align-items-center justify-content-center">
+                        <LayoutOutlined style={{fontSize:'50px',color:'white'}} />
+                    </div>
+                        <p className="col-12 text-center">easy layout</p>
+                    </div>
+                </div>
             </div>
             </div>
     </div>
 )
 }
 
-export default Landing
+export default Banner

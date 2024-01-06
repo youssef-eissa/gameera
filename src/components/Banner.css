@@ -2,9 +2,30 @@
 .banner{
     background-image: url('./assets/banner-bg.jpg');
     background-size: cover;
-    height: 700px;
+    height: 800px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    position: relative;
+}
+.BannerIcons{
+    position: absolute;
+    bottom: -152px;
+}
+.BannerIcons > div{
+    background-color: white;
+    height: 205px;
+}
+.BannerIcons > div div{
+    background-color: #0071f8;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+.BannerIcons p{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 
@@ -70,7 +91,7 @@
     bottom: -220px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
+    width: 70%;
     overflow: auto;
     height: 200px;
 }
