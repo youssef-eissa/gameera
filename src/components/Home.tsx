@@ -3,6 +3,8 @@ import { Games } from "./types/types"
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import './Banner.css'
 import { useEffect, useRef } from "react";
+import HomeGamesTypeSection from "./HomeGamesTypeSection";
+import HomeTopCategoriesSection from "./HomeTopCategoriesSection";
 
 
 
@@ -20,7 +22,7 @@ function Home({ games }: IHomeProps) {
             if (arrowRef.current && scroll > 20) {
                 arrowRef.current.style.opacity = '0'
                 arrowRef.current.style.transition = '0.3s'
-            } else if (arrowRef.current && scroll === 0) {
+            } else if (arrowRef.current && scroll <= 20) {
                 arrowRef.current.style.opacity = '1'
                 arrowRef.current.style.transition = '0.3s'
                 }
@@ -28,9 +30,33 @@ function Home({ games }: IHomeProps) {
         })
 
     })
+    const categories = Array.from(new Set(games?.map((games: Games) => games.genre)))
+
+    function getCat(categories: string[], games: Games[]): Games[] {
+        let categoriesArray: Games[] = []
+        for (let i = 0; i < categories.length; i++){
+            let j = 0
+            while (j < games.length) {
+                if (games[j].genre === categories[i]) {
+                    categoriesArray.push(games[j])
+                    break
+                }
+                j++
+            }
+        }
+        return categoriesArray
+    }
+    
+
+
+
+
 return (
     <>
         <Banner games={games} />
+        <HomeGamesTypeSection title="Trending Games" titleLowercased="Trending" games={games?.slice(0, 4)} />
+        <HomeGamesTypeSection title="Most PLayed" titleLowercased="top games" games={games?.slice(5, 9)} />
+        <HomeTopCategoriesSection categories={getCat(categories.slice(0, 5), games)} />
         <div ref={arrowRef} className="arrow">
         <KeyboardDoubleArrowDownIcon sx={{color: 'white'}} fontSize="large" />
 

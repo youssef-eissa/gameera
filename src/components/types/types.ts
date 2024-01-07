@@ -9,5 +9,6 @@ export type Games = {
     short_description: string
     thumbnail: string
     title: string
+    genre:string
 
 }

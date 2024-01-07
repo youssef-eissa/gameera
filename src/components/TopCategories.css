@@ -1,0 +1,33 @@
+.topCategories{
+    margin-top: 100px !important;
+
+}
+.topCategories >span{
+    font-family: Poppins;
+    color: #ee626b;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+.topCategories h1{
+    font-family: Poppins;
+    font-size: 40px;
+    color: #1e1e1e;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.topCategories .catImgBox{
+    height: 160px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.categoryBox{
+    background-color: #0071f8;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.categoryBox h4{
+    font-family: poppins;
+    font-size: 17px;
+    color: white;
+}

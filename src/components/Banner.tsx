@@ -83,7 +83,7 @@ return (
                         <img alt="img" className="img-fluid h-100" src={`${games && games[RandomeNumber].thumbnail}`} />
                     </div>  
                 </div>
-                <div className="col-10 BannerIcons d-flex justify-content-between" >
+                <div className="col-12 BannerIcons d-flex justify-content-around" >
                     <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center ">
                         <div className="d-flex align-items-center justify-content-center">
                         <CloudDownloadOutlined style={{fontSize:'50px',color:'white'}} />

@@ -1,0 +1,31 @@
+.MainBox{
+    background-color: #F7F7F7;
+    margin-top: 200px !important;
+    border-radius: 200px;
+}
+.MainBox div:nth-child(1) > span{
+    font-family: Poppins;
+    color: #ee626b;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase
+
+}
+.typeBoxImgBox{
+    height: 200px;
+}
+.gameBox span{
+color: #7a7a7a;
+font-size: 14px;
+font-family: poppins;
+}
+.gameBox h4{
+    font-family: poppins;
+    font-size: 17px;
+    color: #1e1e1e;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.gameBox:hover h4{
+    color: #0071f8;
+}
