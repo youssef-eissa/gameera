@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Drawer, Space } from 'antd';
 import { Divide as Hamburger } from 'hamburger-react'
+import { Link } from 'react-router-dom';
 
 
 const Menu: React.FC = () => {
@@ -27,9 +28,10 @@ const Menu: React.FC = () => {
         open={open}
 
     >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+            <div className='col-12 d-flex flex-column align-items-center'>
+                    <Link className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0)}} to='/'>Home</Link>
+                <Link className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0)}} to='/games'>Games</Link>
+            </div>
         </Drawer>
     </>
 );

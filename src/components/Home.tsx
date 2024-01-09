@@ -5,6 +5,7 @@ import './Banner.css'
 import { useEffect, useRef } from "react";
 import HomeGamesTypeSection from "./HomeGamesTypeSection";
 import HomeTopCategoriesSection from "./HomeTopCategoriesSection";
+import Advantages from "./Advantages";
 
 
 
@@ -57,6 +58,7 @@ return (
         <HomeGamesTypeSection title="Trending Games" titleLowercased="Trending" games={games?.slice(0, 4)} />
         <HomeGamesTypeSection title="Most PLayed" titleLowercased="top games" games={games?.slice(5, 9)} />
         <HomeTopCategoriesSection categories={getCat(categories.slice(0, 5), games)} />
+        <Advantages/>
         <div ref={arrowRef} className="arrow">
         <KeyboardDoubleArrowDownIcon sx={{color: 'white'}} fontSize="large" />
 

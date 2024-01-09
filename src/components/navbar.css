@@ -59,3 +59,10 @@
 body{
     background-color: #FFFFFF !important;
 }
+.menuLink{
+    color: #003366;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 18px;
+    transition: 0.3s;
+}

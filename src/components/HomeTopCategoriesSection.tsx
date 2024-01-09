@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './TopCategories.css'
 import { Games } from './types/types'
 
@@ -19,9 +20,9 @@ function HomeTopCategoriesSection({ categories }: TCategories) {
                     {categories?.map((game: Games) => {
                         return <div className='col-2 d-flex flex-column categoryBox ' key={game.id}>
                             <h4 className='col-12 text-center my-4 '>{game.genre}</h4>
-                            <div className='catImgBox col-12 overflow-hidden'>
+                            <Link target='_blank' to={game.game_url} className='catImgBox col-12 overflow-hidden'>
                                 <img alt='img' src={game.thumbnail} className='img-fluid h-100'/>
-                            </div>
+                            </Link>
                         </div>
                     })}
                 </div>

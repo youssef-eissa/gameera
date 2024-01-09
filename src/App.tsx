@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { GamesData } from "./components/fetches/DataFetch";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router";
+import Footer from "./components/Footer";
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home games={games as Games[] } />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

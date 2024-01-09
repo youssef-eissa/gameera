@@ -2,11 +2,13 @@ import { Games } from "./types/types"
 import './Banner.css'
 import { useEffect, useState ,useRef} from "react"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
 import { CloudDownloadOutlined } from "@ant-design/icons"
 import { UserOutlined } from "@ant-design/icons"
 import { PlayCircleOutlined } from "@mui/icons-material"
 import { LayoutOutlined } from "@ant-design/icons"
+import axios from "axios"
+import { useQuery } from "@tanstack/react-query"
+import { useDebounce } from "use-debounce"
 
 
 type ILandingProps = {
@@ -14,8 +16,8 @@ type ILandingProps = {
 }
 function Banner({ games }: ILandingProps) {
     const SearchBox=useRef<HTMLDivElement>(null)
-    const [GameName, setGameName] = useState<string>('')
-    const [GameArray, setGameArray] = useState<Games[]>([])
+    
+    const [Search,setSearch]=useState<string>('')
 
     const [RandomeNumber, setRandomeNumber] = useState<number>(0)
     useEffect(() => {
@@ -23,31 +25,42 @@ function Banner({ games }: ILandingProps) {
         setRandomeNumber(Math.floor(Math.random()*games.length))
         }
     }, [games])
-    
-    
- 
+
     useEffect(() => {
-        if (GameName !== "" && SearchBox.current) {
+        if (Search!==''&& SearchBox.current) {
             
             SearchBox.current.style.transition = '0.5s'
             SearchBox.current.style.bottom = '-220px'
             SearchBox.current.style.opacity = '1'
 
-            setGameArray(games.filter((game:Games)=>game.title.toLowerCase().includes(GameName.toLowerCase())))
         }
-        else if (GameName === "" && SearchBox.current) {
+        else if (Search === "" && SearchBox.current) {
             SearchBox.current.style.opacity = '0'
             
         }
-    }, [GameName, games])
- 
+    }, [ games,Search])
+    const debouncedValue=useDebounce(Search,400)
 
-    function handleSearchGame(e: React.ChangeEvent<HTMLInputElement>) {
-        setGameName(e.target.value)
-
-
-    }
     
+    function getGamesBySearch() {
+        return axios.get(`https://free-to-play-games-database.p.rapidapi.com/api/games`, {
+                params: {
+                category: Search,
+            },
+            headers: {
+                'X-RapidAPI-Key': 'bd5bd0e351mshe0b55c617d771c6p12249djsn8276a5c7dce4',
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        })
+    }
+    const { data  } = useQuery({
+        queryKey: ['Search',debouncedValue[0]],
+        queryFn: getGamesBySearch,
+        select: (data) => data.data,
+        enabled: !!debouncedValue[0]
+
+    })
+
 
 return (
         <div className='container-fluid'>
@@ -62,26 +75,26 @@ return (
                                 autoComplete="off"
                             className="col-12 ps-4"
                             type="text"
-                            placeholder="Enter Game Name"
-                            onChange={handleSearchGame}
+                            placeholder="Search By Category"
+      
+                            onChange={(e)=>setSearch(e.target.value)}
                             name="Search"
-                            value={GameName}
+                            value={Search}
                             />
                         </div>
                         
-                        <motion.div
-                            
+                        <div
                             ref={SearchBox} className="SearchResult d-flex align-items-center justify-content-start flex-column">
-                            {GameArray.length > 0 ? GameArray.map((game: Games) => {
+                            {data ? data.map((game: Games) => {
                                 return <Link target="_blank" to={game.game_url} key={game.id} className="togame ms-2" >{game.title }</Link>
                             }):<div style={{color:'black'}} className="col-12 text-center">No Game Found</div>}
-                        </motion.div>
+                        </div>
                     </form>
                 </div>
                 <div className="col-6 d-flex justify-content-center align-items-center">
                     <div className="col-6 rounded overflow-hidden imgConRightBox">
                         <img alt="img" className="img-fluid h-100" src={`${games && games[RandomeNumber].thumbnail}`} />
-                    </div>  
+                    </div>
                 </div>
                 <div className="col-12 BannerIcons d-flex justify-content-around" >
                     <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center ">

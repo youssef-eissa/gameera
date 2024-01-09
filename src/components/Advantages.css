@@ -1,0 +1,30 @@
+.adv{
+    margin: 100px 0 150px !important;
+    position: relative;
+}
+.midImg{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.leftAdv,
+.rightAdv{
+    background-color: #f7f7f7;
+}
+.leftAdv h6{
+    font-size:15px ;
+    font-family: Poppins;
+    color: #ee626b;
+    font-weight: 700;
+    text-transform: uppercase
+}
+.leftAdv h1,
+.rightAdv h1,
+.leftAdv p,
+.rightAdv p{
+    font-family: poppins;
+}

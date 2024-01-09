@@ -1,7 +1,7 @@
 import { Games } from "./types/types"
 import './HomeTypesSection.css'
 import { Button } from "./StyledComponents/Button.style"
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 
 type ITypeSectionProps = {
     games: Games[]
@@ -10,6 +10,8 @@ type ITypeSectionProps = {
 }
 
 function HomeGamesTypeSection({ games, title, titleLowercased }: ITypeSectionProps) {
+    const navigate = useNavigate()
+    
     
     return (
         <div className="container-fluid ">
@@ -19,7 +21,7 @@ function HomeGamesTypeSection({ games, title, titleLowercased }: ITypeSectionPro
                         <span className="col-12">{titleLowercased}</span>
                         <div className="col-12 d-flex justify-content-between align-items-center">
                         <h1 className="col-3 mt-3">{title}</h1>
-                            <Button className="col-1 align-self-start py-3 px-3">View All</Button>
+                            <Button onClick={() => navigate('/games')} className="col-1 align-self-start py-3 px-3">View All</Button>
                         </div>
                         <div className="col-12 d-flex mt-5 justify-content-center gap-3">
                             {games?.map((games: Games) => {

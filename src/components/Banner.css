@@ -33,7 +33,7 @@
 .arrow{
     width: fit-content;
     position: fixed;
-    top: 825px;
+    top: 800px;
     left: 50%;
     animation: arrowScroll 0.7s ease infinite alternate;
 }

@@ -1,0 +1,12 @@
+.footer{
+    background-image: url('./assets/banner-bg.jpg');
+    background-size: cover;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+.footer p{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
