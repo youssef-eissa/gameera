@@ -1,6 +1,8 @@
 import './Advantages.css'
 import { Button } from './StyledComponents/Button.style'
+import {useNavigate} from 'react-router-dom'
 function Advantages() {
+    const navigate=useNavigate()
     return (
         <div className='container-fluid '>
             <div className='row d-flex justify-content-center'>
@@ -10,13 +12,13 @@ function Advantages() {
                         <h1 className='col-10'>Enjoy with large number of free online games </h1>
                         <p className='col-12'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, sapiente sint maxime et doloribus pariatur porro quo quos obcaecati nemo. Nihil libero vel optio voluptas quasi. Doloribus necessitatibus dolore alias!</p>
 
-                        <Button className='col-3 p-2'>Play Now</Button>
+                        <Button onClick={() => { navigate('/games'); window.scrollTo(0, 0)}} className='col-3 p-2'>Play Now</Button>
                     </div>
                     <div className='col-5 rounded leftAdv d-flex flex-column p-5'>
                         <h6 className='col-12'>unlimited games</h6>
                         <h1 className='col-10'>Enjoy with large number of free online games </h1>
                         <p className='col-12'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, sapiente sint maxime et doloribus pariatur porro quo quos obcaecati nemo. Nihil libero vel optio voluptas quasi. Doloribus necessitatibus dolore alias!</p>
-                        <Button className='col-3 p-2 d-flex ms-auto justify-content-center'>Play Now</Button>
+                        <Button onClick={() => { navigate('/games'); window.scrollTo(0, 0)}} className='col-3 p-2 d-flex ms-auto justify-content-center'>Play Now</Button>
 
                     </div>
                     <div className='midImg rounded overflow-hidden'>

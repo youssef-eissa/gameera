@@ -1,0 +1,59 @@
+
+.imgConGamePage{
+    height: 500px;
+}
+h2{
+    font-family: Poppins;
+    font-size: 40px;
+    color: #ee626b !important;
+    font-weight: 600;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+p{
+    font-family: Poppins;
+    font-size: 18px;
+    color: #1e1e1e !important;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+.info{
+    font-size: 14px;
+    font-family:Poppins ;
+    color: #AAAAAA;
+}
+.info span{
+    color: #0d5efd;
+    font-size: 18px;
+}
+.toGame{
+    background-color: #ee626b;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.toGame:hover{
+    background-color: #007aff;
+}
+.screenShots{
+    margin-top: 150px !important;
+
+}
+
+.gameInfoBox {
+    background-color: #F7F7F7;
+    border-radius: 200px;
+    min-height: 500px;
+}
+
+.screenShotsImgBox {
+    height: 300px;
+}
+h1{
+    font-family: Poppins;
+        font-size: 40px;
+        color: #ee626b !important;
+        font-weight: 600;
+        margin-bottom: 50px;
+}

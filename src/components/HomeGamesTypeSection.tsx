@@ -1,7 +1,9 @@
 import { Games } from "./types/types"
 import './HomeTypesSection.css'
 import { Button } from "./StyledComponents/Button.style"
-import { Link,useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { setGame } from "./Redux/GameReducer";
 
 type ITypeSectionProps = {
     games: Games[]
@@ -11,7 +13,7 @@ type ITypeSectionProps = {
 
 function HomeGamesTypeSection({ games, title, titleLowercased }: ITypeSectionProps) {
     const navigate = useNavigate()
-    
+    const dispatch=useDispatch()
     
     return (
         <div className="container-fluid ">
@@ -20,13 +22,12 @@ function HomeGamesTypeSection({ games, title, titleLowercased }: ITypeSectionPro
                     <div className="col-10 d-flex flex-column  ">
                         <span className="col-12">{titleLowercased}</span>
                         <div className="col-12 d-flex justify-content-between align-items-center">
-                        <h1 className="col-3 mt-3">{title}</h1>
-                            <Button onClick={() => navigate('/games')} className="col-1 align-self-start py-3 px-3">View All</Button>
+                        <h1 className="col-5 mt-3">{title}</h1>
+                            <Button onClick={() => { navigate('/games'); window.scrollTo(0, 0)}} className="col-1 align-self-start py-3 px-3">View All</Button>
                         </div>
                         <div className="col-12 d-flex mt-5 justify-content-center gap-3">
                             {games?.map((games: Games) => {
-                                
-                                return <Link style={{ textDecoration: 'none'}} to='/' key={games.id} className="col-3 d-flex flex-column gameBox ">
+                                return <Link onClick={() => { dispatch(setGame(games.id)); window.scrollTo(0, 0)}} style={{ textDecoration: 'none'}} to={`/game/${games.id}`} key={games.id} className="col-3 d-flex flex-column gameBox ">
                                     <div className="col-12 d-flex rounded overflow-hidden typeBoxImgBox">
                                         <img className="img-fluid h-100" alt="img" src={games.thumbnail} />
                                     </div>

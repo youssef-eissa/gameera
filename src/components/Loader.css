@@ -1,0 +1,48 @@
+.loaderBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 999999;
+}
+.loader{
+    font-family: Rubik Doodle Shadow;
+    font-size: 100px;
+    color: #0171F9 !important;
+}
+.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #0171F9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.circle::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: dotted;
+    border-color: #0171F9  #EEF296;
+    transform: translate(-50%,-50%);
+    animation: spin 1s infinite linear;
+}
+.circleBox{
+    margin-top: 100px;
+    position: relative;
+}
+@keyframes spin {
+    from{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}

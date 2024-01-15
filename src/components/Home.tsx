@@ -4,8 +4,9 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import './Banner.css'
 import { useEffect, useRef } from "react";
 import HomeGamesTypeSection from "./HomeGamesTypeSection";
-import HomeTopCategoriesSection from "./HomeTopCategoriesSection";
+import HomeTopCategoriesSection from "./TopCategoriesAndRelatedGames";
 import Advantages from "./Advantages";
+import { motion } from "framer-motion";
 
 
 
@@ -32,6 +33,8 @@ function Home({ games }: IHomeProps) {
 
     })
     const categories = Array.from(new Set(games?.map((games: Games) => games.genre)))
+    
+    
 
     function getCat(categories: string[], games: Games[]): Games[] {
         let categoriesArray: Games[] = []
@@ -47,13 +50,34 @@ function Home({ games }: IHomeProps) {
         }
         return categoriesArray
     }
+   
     
 
 
 
 
 return (
-    <>
+    <motion.div
+            initial='initial'
+            animate='animate'
+            exit='exit'
+            transition={{duration: 0.5,bounce: 0.5}}
+            variants={{
+                initial: {
+                    opacity: 0,
+
+                },
+                animate: {
+                    opacity: 1,
+                    y:'0'
+
+                },
+                exit: {
+                    opacity: 0,
+
+                }
+            }}
+    >
         <Banner games={games} />
         <HomeGamesTypeSection title="Trending Games" titleLowercased="Trending" games={games?.slice(0, 4)} />
         <HomeGamesTypeSection title="Most PLayed" titleLowercased="top games" games={games?.slice(5, 9)} />
@@ -63,7 +87,7 @@ return (
         <KeyboardDoubleArrowDownIcon sx={{color: 'white'}} fontSize="large" />
 
         </div>
-    </>
+    </motion.div>
 )
 }
 

@@ -1,0 +1,21 @@
+.radio{
+    color: #ee626b;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: poppins;
+   
+}
+.radioBox {
+    border-color: transparent #ee626b #ee626b transparent;
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        border-bottom-right-radius: 20px;
+}
+
+.gameBox{
+    height: 200px;
+}
+.comingSoon{
+    height: 500px;
+}

@@ -25,12 +25,13 @@ const Menu: React.FC = () => {
         placement={'bottom'}
         width={500}
         onClose={onClose}
-        open={open}
+                open={open}
+                style={{backgroundColor: '#0071f8'}}
 
     >
             <div className='col-12 d-flex flex-column align-items-center'>
-                    <Link className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0)}} to='/'>Home</Link>
-                <Link className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0)}} to='/games'>Games</Link>
+                <Link  className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0)}} to='/'>Home</Link>
+                <Link  className=' menuLink' onClick={() => { onClose(); window.scrollTo(0, 0) }} to='/games'>Games</Link>
             </div>
         </Drawer>
     </>
