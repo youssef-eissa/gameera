@@ -30,3 +30,11 @@ font-family: poppins;
 .gameBox:hover h4{
     color: #0071f8;
 }
+
+@media (max-width: 768px) {
+    .typeBoxImgBox {
+            height: 150px;
+        }
+       
+    
+}

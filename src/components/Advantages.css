@@ -28,3 +28,18 @@
 .rightAdv p{
     font-family: poppins;
 }
+
+@media screen and (max-width: 768px) {
+    .midImg{
+        display: none;
+    }
+        .leftAdv p,
+        .rightAdv p {
+            font-size: 12px;
+        }
+                .leftAdv h1,
+                .rightAdv h1{
+                    font-size: 20px;
+                }
+    
+}

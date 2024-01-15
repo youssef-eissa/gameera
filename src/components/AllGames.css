@@ -19,3 +19,20 @@
 .comingSoon{
     height: 500px;
 }
+@media (max-width: 768px) {
+    .allgameGameBox p{
+        font-size: 12px;
+    }
+    .comingSoon{
+        height: 200px;
+    }
+    .radio{
+        font-size: 12px;
+    }
+    .radioBox{
+        border: none;
+    }
+    .gameTitle{
+        font-size: 12px;
+    }
+}

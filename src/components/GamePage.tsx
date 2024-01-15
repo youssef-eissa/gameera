@@ -65,14 +65,14 @@ function GamePage() {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-12 d-flex mt-5 align-items-center justify-content-between">
-                        <div className="col-5 rounded overflow-hidden imgConGamePage">
+                    <div className="col-12 d-flex flex-md-row flex-column mt-5 align-items-center justify-content-between">
+                        <div className="col-md-5 col-10 rounded overflow-hidden imgConGamePage">
                             <img alt="img" className="img-fluid h-100" src={gameData && gameData.thumbnail } />
                         </div>
-                        <div className="col-5 d-flex flex-column align-items-center justify-content-center">
+                        <div className="col-md-5 col-10 mt-md-0 mt-3 d-flex flex-column align-items-center justify-content-center">
                             <h2 className="col-12">{gameData && gameData.title}</h2>
                             <p className="col-12">{gameData && gameData.short_description}</p>
-                            <div className="col-10 d-flex info flex-column">
+                            <div className="col-md-10 col-12 d-flex info flex-column">
                                 <div className="col-12  d-flex align-items-center">
                                     Genre <span className="ms-5">{gameData && gameData.genre}</span>
                                 </div>
@@ -85,7 +85,7 @@ function GamePage() {
                                 </div>
                                 
                             </div>
-                            <Link target="_blank" to={`${gameData?.freetogame_profile_url}`} className="col-3 p-2 toGame text-center">Play Now</Link>
+                            <Link target="_blank" to={`${gameData?.freetogame_profile_url}`} className="col-md-3 col-6 p-2 toGame text-center">Play Now</Link>
                         </div>
                     </div>
                 </div>
@@ -93,10 +93,10 @@ function GamePage() {
 
                 <div className="container">
                 <div className="row">
-                    <div className="col-12 screenShots d-flex flex-column">
+                    <div className="col-12 screenShots p-0 d-flex flex-column">
                             <h1 className="col-12">Description</h1>
-                        <div className="col-12 gameInfoBox d-flex justify-content-center align-items-center">
-                          <p className="col-10">{gameData && gameData.description}</p>
+                        <div className="col-12 gameInfoBox  d-flex justify-content-center align-items-center">
+                        <p className="col-md-10 col-12 ">{gameData && gameData.description}</p>
                     </div>
                     </div>
                 </div>
@@ -105,10 +105,12 @@ function GamePage() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 screenShots d-flex flex-column">
-                            <h1 className="col-12">Screenshots</h1>
-                        <div className="col-12 gameInfoBox d-flex justify-content-center align-items-center gap-3 ">
+
+                        <h1 className="col-12">Screenshots</h1>
+
+                        <div className="col-12 gameInfoBox py-2 d-flex justify-content-center align-items-center flex-md-row flex-column gap-3 ">
                             {gameData && gameData.screenshots.slice(0,3).map((img: { id: number, image: string }) => {
-                            return <div key={img.id} className="col-3  rounded overflow-hidden screenShotsImgBox">
+                            return <div key={img.id} className="col-md-3 col-10  rounded overflow-hidden screenShotsImgBox">
                                 <img alt="img" className="img-fluid h-100" src={ img.image} />
                             </div>
                         })}

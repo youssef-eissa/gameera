@@ -66,3 +66,18 @@ body{
     font-size: 20px;
     transition: 0.3s;
 }
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+    .logo span {
+        font-size: 30px;
+    }
+    .navInfo::before {
+        display: none;
+        }
+    .navInfo {
+    font-size: 14px;
+    }
+}

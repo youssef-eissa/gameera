@@ -24,5 +24,14 @@ span{
     font-weight: 700;
     text-transform: uppercase
 }
+@media (max-width: 768px) {
+    height: 300px;
+    h1{
+        font-size: 20px;
+    }
+    span{
+        font-size: 12px;
+    }
+}
 
 `;

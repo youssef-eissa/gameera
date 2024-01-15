@@ -57,3 +57,25 @@ h1{
         font-weight: 600;
         margin-bottom: 50px;
 }
+@media (max-width: 768px) {
+    .imgConGamePage {
+        height:300px;
+    }
+    h2 {
+        font-size: 20px !important;
+           
+    }
+    p {
+    font-size: 14px;
+   
+}
+h1 {
+    font-size: 30px !important;
+   
+}
+.gameInfoBox {
+    background-color: #F7F7F7;
+    border-radius: 0;
+    min-height: 500px;
+}
+}

@@ -65,8 +65,9 @@ function Banner({ games }: ILandingProps) {
 return (
         <div className='container-fluid'>
         <div className='row'>
-            <div className='col-12 p-0 d-flex banner justify-content-around'>
-                <div className="col-5 d-flex flex-column BannerLeftBox justify-content-center">
+            <div className='col-12 p-0 d-flex flex-column banner justify-content-md-center '>
+                <div className="col-12 mt-5 d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
+                <div className="col-md-5 col-12 d-flex flex-column BannerLeftBox justify-content-center">
                     <h3 className="col-12 text-center">Welcome to <span className='gamera'>Gam<span>E</span>ra</span></h3>
                     <h1 className="col-12 text-center">best <span>gaming</span> site ever</h1>
                     <form  className="col-12 d-flex mt-5 justify-content-center">
@@ -91,31 +92,32 @@ return (
                         </div>
                     </form>
                 </div>
-                <div className="col-6 d-flex justify-content-center align-items-center">
-                    <div className="col-6 rounded overflow-hidden imgConRightBox">
+                <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                    <div className="col-md-6 col-10 rounded overflow-hidden imgConRightBox">
                         <img alt="img" className="img-fluid h-100" src={`${games && games[RandomeNumber].thumbnail}`} />
                     </div>
                 </div>
-                <div className="col-12 BannerIcons d-flex justify-content-around" >
-                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center ">
+              </div>
+                <div className="col-12 BannerIcons row-gap-3 row-gap-md-0 d-flex flex-md-row flex-column justify-content-md-around align-items-center" >
+                    <div className="col-md-2 col-10 d-flex flex-column align-items-center rounded justify-content-center ">
                         <div className="d-flex align-items-center justify-content-center">
                         <CloudDownloadOutlined style={{fontSize:'50px',color:'white'}} />
                     </div>
                         <p className="col-12 text-center">Free Storage</p>
                     </div>
-                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                    <div className="col-md-2 col-10 d-flex flex-column align-items-center rounded justify-content-center">
                         <div className="d-flex align-items-center justify-content-center">
                         <UserOutlined style={{fontSize:'50px',color:'white'}} />
                     </div>
                         <p className="col-12 text-center">User More</p>
                     </div>
-                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                    <div className="col-md-2 col-10 d-flex flex-column align-items-center rounded justify-content-center">
                         <div className="d-flex align-items-center justify-content-center">
                         <PlayCircleOutlined style={{fontSize:'50px',color:'white'}} />
                     </div>
                         <p className="col-12 text-center">replay ready</p>
                     </div>
-                    <div className="col-2 d-flex flex-column align-items-center rounded justify-content-center">
+                    <div className="col-md-2 col-10 d-flex flex-column align-items-center rounded justify-content-center">
                         <div className="d-flex align-items-center justify-content-center">
                         <LayoutOutlined style={{fontSize:'50px',color:'white'}} />
                     </div>

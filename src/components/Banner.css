@@ -8,8 +8,12 @@
     position: relative;
 }
 .BannerIcons{
-    position: absolute;
-    bottom: -152px;
+    top: 200px;
+    position: relative;
+}
+
+.bannerSearchAndImg{
+    margin-bottom: 200px;
 }
 .BannerIcons > div{
     background-color: #f7f7f7;
@@ -120,4 +124,39 @@
         transform: translateY(0);
     }
     
+}
+
+@media (max-width:768px) {
+    .banner{
+        margin-bottom: 800px;
+    }
+    .BannerLeftBox h1 {
+        font-size: 28px;
+    }
+    .BannerLeftBox h1 span::after {
+    bottom: -10px;
+        }
+    .imgConRightBox {
+    height: 435px;
+    }
+    .BannerIcons {
+        top: 200px;
+    }
+    .BannerIcons >div{
+        box-shadow: 1px 1px 5px black;
+    }
+    .arrow {
+        display: none;
+        }
+    .SearchResult {
+    bottom: -170px !important;
+    background-color: #2d83ecfc; 
+    height: 150px;
+    
+    }
+    .togame {
+    color: white;
+            
+        }
+
 }

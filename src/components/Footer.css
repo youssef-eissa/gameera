@@ -10,3 +10,10 @@
     font-weight: 600;
     color: white !important;
 }
+
+@media (max-width: 768px) {
+    .footer p{
+        font-size: 12px;
+    }
+    
+}
