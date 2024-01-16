@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# GamEra games online website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An online website for online games that provides many of suggested online games and ability to search by categories for games and related games to each one.
 
-## Available Scripts
+# Api sources:
 
-In the project directory, you can run:
+- https://rapidapi.com/digiwalls/api/free-to-play-games-database for games
 
-### `npm start`
+# About the website
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+GamEra games online Website includes the following pages:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Home page
+- Games Page
+- Single game Page
+- Footer
+- Loader made by me
 
-### `npm test`
+# Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Typescript
+- React Query
+- React
+- Redux
+- Bootstrap
+- ant.design
 
-### `npm run build`
+# Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img alt='signin' src="/screenshots/home.png">
+<img alt='signup' src='/screenshots/home2.png'>
+<img alt='signup2' src='/screenshots/home3.png'>
+<img alt='home' src='/screenshots/home4.png'>
+<img alt='home' src='/screenshots/gamesPage3.png'>
+<img alt='home' src='/screenshots/gamesPage.png'>
+<img alt='home' src='/screenshots/gamesPage2.png'>
+<img alt='home' src='/screenshots/gamepage.png'>
+<img alt='home' src='/screenshots/gamepage2.png'>
+<img alt='home' src='/screenshots/gamepage3.png'>
+<img alt='home' src='/screenshots/gamepage4.png'>
+<img alt='home' src='/screenshots/loader.png'>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Project Link
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://gameera-sand.vercel.app/
